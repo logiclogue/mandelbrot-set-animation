@@ -1,15 +1,19 @@
+DEP=https://github.com/logiclogue/mandelbrot-set-cpp
+LIBDIR=lib
+BINDIR=bin
+
 all: lib bin bin/mandelbrot
 
-lib:
-	git clone --depth 1 https://github.com/logiclogue/mandelbrot-set-cpp lib
-	make -C lib
+$(LIBDIR):
+	git clone --depth 1 $(DEP) $(LIBDIR)
+	make -C $(LIBDIR)
 
-bin:
-	mkdir bin
+$(BINDIR):
+	mkdir $(BINDIR)
 
 bin/mandelbrot:
-	cp lib/build/main bin/mandelbrot
+	cp $(LIBDIR)/build/main $(BINDIR)/mandelbrot
 
 clean:
-	rm -rf lib
-	rm -rf bin
+	rm -rf $(LIBDIR)
+	rm -rf $(BINDIR)
