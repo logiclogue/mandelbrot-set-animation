@@ -11,8 +11,8 @@ do
     convert <(
         "$mandelbrot" \
             --bitmap --ratio 1 \
-            --multi-r "${list[$i]}" \
             --width 100 --height 100 \
+            --multi-r "${list[$i]}" \
             --iterations 10 "$@"
     ) "$builddir/${filename}_$( printf %05d "$i" ).png"
 
