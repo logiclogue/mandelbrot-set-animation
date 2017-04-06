@@ -1,8 +1,14 @@
 DEP=https://github.com/logiclogue/mandelbrot-set-cpp
 LIBDIR=lib
+BUILDDIR=build
 BINDIR=bin
+SRCDIR=src
+BIN=mandelbrot
+ANIMATIONS=$(shell ls $(DIRSRC)/*.sh)
 
-all: lib bin bin/mandelbrot
+all: install
+
+install: $(LIBDIR) $(BINDIR) $(BINDIR)/$(BIN)
 
 $(LIBDIR):
 	git clone --depth 1 $(DEP) $(LIBDIR)
@@ -11,8 +17,8 @@ $(LIBDIR):
 $(BINDIR):
 	mkdir $(BINDIR)
 
-bin/mandelbrot:
-	cp $(LIBDIR)/build/main $(BINDIR)/mandelbrot
+$(BINDIR)/$(BIN):
+	cp $(LIBDIR)/build/main $(BINDIR)/$(BIN)
 
 clean:
 	rm -rf $(LIBDIR)
