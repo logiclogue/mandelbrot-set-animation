@@ -4,7 +4,7 @@ BUILDDIR=build
 BINDIR=bin
 SRCDIR=src
 BIN=mandelbrot
-ANIMATIONS=$(shell ls $(DIRSRC)/*.sh)
+ANIMATION=$(shell ls $(DIRSRC))
 
 all: install
 
@@ -19,6 +19,9 @@ $(BINDIR):
 
 $(BINDIR)/$(BIN):
 	cp $(LIBDIR)/build/main $(BINDIR)/$(BIN)
+
+$(BUILDDIR)/%: $(SRCDIR)/%.sh
+	bash $@
 
 clean:
 	rm -rf $(LIBDIR)
