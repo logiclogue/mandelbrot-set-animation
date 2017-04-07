@@ -21,7 +21,7 @@ $(BINDIR)/$(BIN):
 	cp $(LIBDIR)/build/main $(BINDIR)/$(BIN)
 
 $(BUILDDIR)/%: $(SRCDIR)/%.sh
-	bash $@
+	bash $<
 
 clean:
 	rm -rf $(LIBDIR)
