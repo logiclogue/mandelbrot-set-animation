@@ -2,17 +2,17 @@ mydir=${0%/*}
 filename=$( basename "$0" .sh )
 builddir="$mydir/../build/$filename"
 mandelbrot="./$mydir/../bin/mandelbrot"
-list=($( seq 0 0.01 8 | tr " " "\n" ))
+list=($( seq 1 0.00445 9 | tr " " "\n" ))
 
 mkdir -p "$builddir"
 
-for i in $( seq 0 800 )
+for i in $( seq 0 1800 )
 do
     convert <(
         "$mandelbrot" \
             --bitmap --ratio 1 \
             --width 100 --height 100 \
-            --multi-r "${list[$i]}" \
+            --julia-r -1 --multi-r "${list[$i]}" \
             --iterations 10 "$@"
     ) "$builddir/${filename}_$( printf %05d "$i" ).png"
 
