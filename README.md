@@ -12,7 +12,7 @@ Using `mandelbrot-set-cpp`, shell script, and `ffmpeg` to animate the Mandelbrot
 
 ## Installation
 
-Make sure you have `make`, `ffmpeg`, and `g++` installed.
+Make sure you have `make`, `ffmpeg`, `imagemagick`, and `g++` installed.
 
 Running `make` will install and compile the `mandelbrot-set-cpp` dependency.
 
