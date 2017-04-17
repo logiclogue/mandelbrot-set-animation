@@ -1,4 +1,6 @@
-mydir=${0%/*}
+#!/bin/bash
+
+mydir=$( dirname "$0" )
 filename=$( basename "$0" .sh )
 builddir="$mydir/../build/$filename"
 mandelbrot="./$mydir/../bin/mandelbrot"
