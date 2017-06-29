@@ -34,7 +34,7 @@ parameters can be replaced by appending new parameters like so:
 
 ## License
 
-MIT LICENSE. See [LICENSE](LICENSE).
+MIT LICENSE
 
 ## Author
 
